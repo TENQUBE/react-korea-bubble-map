@@ -1,0 +1,103 @@
+@keyframes pulseAnimation {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.react-korea-bubble-map {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+
+  .react-korea-bubble-map__pulse {
+    pointer-events: none;
+    animation: pulseAnimation 2s linear infinite;
+  }
+
+  .react-korea-bubble-map__tooltip {
+    display: none;
+    pointer-events: none;
+    user-select: none;
+
+    position: fixed;
+    position: -ms-page;
+    z-index: 100;
+    opacity: 0;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #eef0f5;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    line-height: 18px;
+    color: #070707;
+    padding: 16px;
+    z-index: 2;
+
+    strong {
+      display: inline-block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        font-weight: 400;
+      }
+
+      span:first-of-type {
+        margin-right: 10px;
+      }
+    }
+
+    div:first-of-type {
+      margin-bottom: 8px;
+    }
+  }
+
+  .btn-area {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 0;
+    &.visible {
+      opacity: 1;
+    }
+
+    & > button {
+      width: 44px;
+      height: 44px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #070707;
+      background: #ffffff;
+      border: 1px solid #eef0f5;
+
+      &:first-of-type {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      &:last-of-type {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      &:disabled {
+        cursor: default;
+      }
+    }
+  }
+}
