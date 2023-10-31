@@ -1,10 +1,4 @@
-import React, {
-  ReactElement,
-  useEffect,
-  useState,
-  cloneElement,
-  useRef,
-} from "react";
+import React, { useEffect, useState, useRef, ReactNode } from "react";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
 import { GeometryCollection, Topology } from "topojson-specification";
@@ -31,7 +25,7 @@ interface BubbleMapData extends MapData {
   index: number;
 }
 
-interface TooltipProps {
+export interface TooltipProps {
   name: string;
   count: number;
   percent: number;
@@ -50,7 +44,7 @@ export interface BubbleMapConfigProps {
   countLabel?: string;
   countPostfix?: string;
   percentLabel?: string;
-  customTooltip?: ReactElement;
+  customTooltip?(params: TooltipProps): ReactNode;
 }
 
 export default function KoreaBubbleMap({
@@ -507,18 +501,15 @@ export default function KoreaBubbleMap({
 
   function renderTooltip() {
     if (customTooltip) {
-      return cloneElement<TooltipProps>(
-        <div className="react-korea-bubble-map__tooltip">{customTooltip}</div>,
-        {
-          name,
-          count,
-          percent,
-        }
-      );
+      return customTooltip({
+        name,
+        count,
+        percent,
+      });
     }
 
     return (
-      <div className="react-korea-bubble-map__tooltip">
+      <>
         <strong>{name}</strong>
         <div>
           <span>{countLabel}</span>
@@ -531,7 +522,7 @@ export default function KoreaBubbleMap({
           <span>{percentLabel}</span>
           <span>{percent}%</span>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -561,7 +552,7 @@ export default function KoreaBubbleMap({
   return (
     <div className="react-korea-bubble-map" style={{ width, height }}>
       <svg width={width} height={height}></svg>
-      {renderTooltip()}
+      <div className="react-korea-bubble-map__tooltip">{renderTooltip()}</div>
       {renderZoomButton()}
     </div>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { KoreaBubbleMap } from "../../dist/esm";
-// import KoreaBubbleMap from "../../src/KoreaBubbleMap";
+import { KoreaBubbleMap } from "@tenqube/react-korea-bubble-map";
 
 const container = document.getElementById("wrap");
 const root = ReactDOM.createRoot(container);

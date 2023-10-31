@@ -1,10 +1,15 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 interface MapData {
     code: string;
     name: string;
     count: number;
+}
+interface TooltipProps {
+    name: string;
+    count: number;
+    percent: number;
 }
 interface KoreaMapData {
     sido: MapData[];
@@ -18,8 +23,8 @@ interface BubbleMapConfigProps {
     countLabel?: string;
     countPostfix?: string;
     percentLabel?: string;
-    customTooltip?: ReactElement;
+    customTooltip?(params: TooltipProps): ReactNode;
 }
 declare function KoreaBubbleMap({ width, height, data, countLabel, countPostfix, percentLabel, customTooltip, }: BubbleMapConfigProps): react_jsx_runtime.JSX.Element;
 
-export { type BubbleMapConfigProps, KoreaBubbleMap, type KoreaMapData, type MapData };
+export { type BubbleMapConfigProps, KoreaBubbleMap, type KoreaMapData, type MapData, type TooltipProps };

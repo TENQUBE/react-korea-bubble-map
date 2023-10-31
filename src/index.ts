@@ -1,6 +1,11 @@
 import "./styles/main.scss";
 
-import { MapData, KoreaMapData, BubbleMapConfigProps } from "./KoreaBubbleMap";
+import {
+  MapData,
+  KoreaMapData,
+  TooltipProps,
+  BubbleMapConfigProps,
+} from "./KoreaBubbleMap";
 
-export { MapData, KoreaMapData, BubbleMapConfigProps };
+export { MapData, KoreaMapData, BubbleMapConfigProps, TooltipProps };
 export { default as KoreaBubbleMap } from "./KoreaBubbleMap";

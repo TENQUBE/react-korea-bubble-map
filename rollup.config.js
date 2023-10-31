@@ -19,12 +19,10 @@ export default [
       {
         dir: pkg.main,
         format: "cjs",
-        sourcemap: true,
       },
       {
         dir: pkg.module,
         format: "es",
-        sourcemap: true,
       },
     ],
     external,
@@ -34,7 +32,7 @@ export default [
       commonjs(),
       json({ compact: true }),
       babel({
-        include: ["src/**/*"],
+        include: ["src/**/*", "public/**/*"],
         exclude: ["node_modules/**"],
         babelHelpers: "runtime",
         plugins: ["@babel/plugin-transform-runtime"],
