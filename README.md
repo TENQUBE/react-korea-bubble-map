@@ -12,7 +12,15 @@ $ npm install @tenqube/react-korea-bubble-map
 
 ## Bubble Map
 
-![react-korea-bubble-map-example](https://github.com/TENQUBE/react-korea-bubble-map/assets/45587474/0b29835f-2c5e-4351-b9f6-8c2b44b826a0)
+![react-korea-bubble-map-example](https://github.com/TENQUBE/react-korea-bubble-map/assets/45587474/f1ee9a36-aed8-4359-bacc-3d08ec160acb)
+
+### Levels
+
+South Korean administrative divisions are consisted of three levels:
+
+- [Provinces (시도)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Provincial_level_divisions): Special City(특별시), Metropolitan City(광역시), Province(도), Special Self-governing Province(특별자치도), Special Self-governing City(특별자치시)
+- [Municipalities (시군구)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Municipal_level_divisions): Si (시, city), Gun (군, county), Gu (구, district)
+- [Submunicipalities (읍면동)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Submunicipal_level_divisions): Eup (읍, town), Myeon (면, township), Dong (동, neighborhood)
 
 ## Quick Start
 
@@ -71,3 +79,8 @@ root.render(<KoreaBubbleMap data={data} width={500} height={500} />);
 | name    | string | :heavy_check_mark: | -       | 지역 이름                   |
 | count   | number | :heavy_check_mark: | -       | 집계된 수                   |
 | percent | number | :heavy_check_mark: | -       | 전체 집계 중 현재 지역 비율 |
+
+## References
+
+- http://www.gisdeveloper.co.kr/?p=2332
+- https://github.com/southkorea/southkorea-maps
