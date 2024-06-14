@@ -1,6 +1,6 @@
 {
   "name": "@tenqube/react-korea-bubble-map",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React SVG Korea map with d3 and topojson.",
   "main": "dist/cjs",
   "module": "dist/esm",
