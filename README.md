@@ -80,6 +80,9 @@ root.render(<KoreaBubbleMap data={data} width={500} height={500} />);
 | count   | number | :heavy_check_mark: | -       | 집계된 수                   |
 | percent | number | :heavy_check_mark: | -       | 전체 집계 중 현재 지역 비율 |
 
+## 행정구역 데이터 최근 업데이트 날짜
+> 2024.02.13
+
 ## References
 
 - http://www.gisdeveloper.co.kr/?p=2332

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { KoreaBubbleMap } from "@tenqube/react-korea-bubble-map";
+// import { KoreaBubbleMap } from "@tenqube/react-korea-bubble-map";
+import { KoreaBubbleMap } from "../../dist/esm/index.js";
 
 const container = document.getElementById("wrap");
 const root = ReactDOM.createRoot(container);
@@ -22,7 +23,7 @@ const data = {
     { code: "4400000000", name: "충청남도", count: 591 },
     { code: "3611000000", name: "세종특별자치시", count: 163 },
     { code: "2900000000", name: "광주광역시", count: 269 },
-    { code: "4500000000", name: "전라북도", count: 234 },
+    { code: "5200000000", name: "전북특별자치도", count: 234 },
     { code: "3100000000", name: "울산광역시", count: 245 },
   ],
   sigungu: [

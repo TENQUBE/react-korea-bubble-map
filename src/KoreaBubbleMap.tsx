@@ -222,7 +222,7 @@ export default function KoreaBubbleMap({
       .enter()
       .append("path")
       .attr("d", path)
-      .attr("data-code", (d) => d.properties.CODE)
+      .attr("data-code", (d) => d.properties.CODE.padEnd(10, "0"))
       .attr("data-name", (d) => d.properties.KOR_NM)
       .attr("fill", "#dbdce0");
 
@@ -327,7 +327,9 @@ export default function KoreaBubbleMap({
     geoData: Feature<Geometry, GeometryProperties>[],
     data: BubbleMapData
   ) {
-    return geoData.find((feature) => feature.properties.CODE === data.code);
+    return geoData.find(
+      (feature) => feature.properties.CODE.padEnd(10, "0") === data.code
+    );
   }
 
   function handleBubbleMouseOver(
@@ -400,7 +402,7 @@ export default function KoreaBubbleMap({
       .zoom()
       .scaleExtent([1, 80])
       .translateExtent([
-        [0, 0],
+        [-100, -100],
         [width + 100, height + 100],
       ])
       .on("zoom", (event) => {
